@@ -42,38 +42,39 @@ Incomparable
 
 package problemoftheday;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Boxes {
     static Scanner scanner = new Scanner(System.in);
-    private ArrayList<Integer> arrayList;
 
-    public static void main(String[] args) throws IndexOutOfBoundsException {
-        ArrayList<Integer> box1 = new ArrayList<>();
-        ArrayList<Integer> box2 = new ArrayList<>();
+    public static void main(String[] args) {
 
-        box1 = takingParameters();
-        Collections.sort(box1);
-        box2 = takingParameters();
-        Collections.sort(box2);
-        for (int i = 0; i < box1.size(); i++) {
+        int[] box1 = takingParameters();
+        int[] box2 = takingParameters();
+        Arrays.sort(box1);
+        Arrays.sort(box2);
 
+        if (box1[0] >= box2[0] && box1[1] >= box2[1] && box1[2] >= box2[2]) {
+            if (box1[0] == box2[0] && box1[1] == box2[1] && box1[2] == box2[2]) {
+                System.out.println("Box 1 = Box 2");
+                return;
+            }
+            System.out.println("Box 1 > Box 2");
+        } else if (box1[0] <= box2[0] && box1[1] <= box2[1] && box1[2] <= box2[2]) {
+            System.out.println("Box 1 < Box 2");
+        } else {
+            System.out.println("Incomparable");
         }
-        if (box1.equals(box2)) {
-            System.out.println("Box 1 = Box 2");
-        }
-
     }
 
-    static ArrayList<Integer> takingParameters() {
-        ArrayList<Integer> box = new ArrayList<>();
+    static int[] takingParameters() {
+        int[] newarr = new int[3];
         String input = scanner.nextLine();
         String[] str = input.split(" ");
         for (int i = 0; i < str.length; i++) {
-            box.add(Integer.parseInt(str[i]));
+            newarr[i] = Integer.parseInt(str[i]);
         }
-        return box;
+        return newarr;
     }
 }
