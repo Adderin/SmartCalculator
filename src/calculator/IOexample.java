@@ -4,9 +4,19 @@ import java.util.Scanner;
 
 public class IOexample {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int first = scanner.nextInt();
-        int second = scanner.nextInt();
-        System.out.println(first+second);
+        do {
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            if (input.equals("/exit")) {
+                System.out.println("Bye");
+                break;
+            }
+            String[] str = input.split(" ");
+            if (str.length <= 1) {
+                System.out.println(Integer.parseInt(str[0]));
+            } else {
+                System.out.println(Integer.parseInt(str[0]) + Integer.parseInt(str[1]));
+            }
+        } while(true);
     }
 }
