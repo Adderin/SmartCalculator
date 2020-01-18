@@ -12,14 +12,14 @@ public class IOexample {
                     System.out.println("Bye!");
                     break;
                 }
-            String[] str = input.split(" ");
-            if (str.length <= 1) {
-                System.out.println(Integer.parseInt(str[0]));
-            } else {
-                System.out.println(Integer.parseInt(str[0]) + Integer.parseInt(str[1]));
-            }
+                String[] str = input.split(" ");
+                if (str.length <= 1) {
+                    System.out.println(Integer.parseInt(str[0]));
+                } else {
+                    System.out.println(Integer.parseInt(str[0]) + Integer.parseInt(str[1]));
+                }
             } catch (Exception e) {
             }
-        } while(true);
+        } while (true);
     }
 }
