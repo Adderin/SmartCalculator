@@ -12,11 +12,18 @@ public class IOexample {
                     System.out.println("Bye!");
                     break;
                 }
+                if (input.equals("/help")) {
+                    System.out.println("The program calculates the sum of numbers");
+                }
                 String[] str = input.split(" ");
+                int sum = 0;
                 if (str.length <= 1) {
                     System.out.println(Integer.parseInt(str[0]));
                 } else {
-                    System.out.println(Integer.parseInt(str[0]) + Integer.parseInt(str[1]));
+                    for (int i = 0; i < str.length; i++) {
+                        sum += Integer.parseInt(str[i]);
+                    }
+                    System.out.println(sum);
                 }
             } catch (Exception e) {
             }
